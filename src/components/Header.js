@@ -3,12 +3,13 @@
 import { Navbar } from './Navbar';
 //assets
 import logo from '../assets/images/logo.svg';
+import { Logo } from './Logo';
 
 export const Header = () => {
    return (
       <header className="Header">
-         <section className="logo">
-            <img src={logo} alt="Shortly" className="logo__img" width='130' height='35' />
+         <section className="Header__logo">
+            <Logo color="#000" />
          </section>
          <Navbar />
       </header>

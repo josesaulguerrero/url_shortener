@@ -1,8 +1,13 @@
 //libraries and hooks
 //components
+import { Logo } from "./Logo";
 import { ResourceCard } from "./ResourceCard";
+import { SocialMediaIcon } from "./SocialMediaIcon";
 //assets
-import logo from "../assets/images/logo.svg";
+import FacebookLogo from "../assets/images/icon-facebook.svg";
+import TwitterLogo from "../assets/images/icon-twitter.svg";
+import PinterestLogo from "../assets/images/icon-pinterest.svg";
+import InstagramLogo from "../assets/images/icon-instagram.svg";
 
 export const Footer = () => {
    const resources = [
@@ -52,15 +57,43 @@ export const Footer = () => {
          ]
       }
    ];
+   const socialMedia = [
+      {
+         name: "Facebook",
+         image: FacebookLogo,
+      },
+      {
+         name: "Twitter",
+         image: TwitterLogo,
+      },
+      {
+         name: "Pinterest",
+         image: PinterestLogo,
+      },
+      {
+         name: "Instagram",
+         image: InstagramLogo,
+      },
+   ];
    return (
       <footer className="Footer" id="resources">
-         <img src={logo} alt="logo" className="Footer__logo" width='130' height='35' />
+         <Logo color="#fff" />
          {
             resources.map(({ title, links }) =>
                <ResourceCard
                   key={title}
                   title={title}
                   links={links}
+               />
+            )
+         }
+         {
+            socialMedia.map(({ name, image }) =>
+               <SocialMediaIcon
+                  href="#"
+                  key={name}
+                  name={name}
+                  image={image}
                />
             )
          }
