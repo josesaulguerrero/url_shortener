@@ -4,9 +4,8 @@
 
 export const Button = ({
    type = "primary",
-   content
+   content = "write something"
 }) => {
-   console.log(content);
    return (
       <button className={type}>{content}</button>
    );

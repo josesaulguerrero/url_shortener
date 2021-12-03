@@ -1,15 +1,32 @@
 //libraries and hooks
 //components
 import { Button } from "./Button";
+import { Link } from "./Link";
 //assets
 
 export const Navbar = () => {
+   const links = [
+      {
+         href: "#features",
+         content: "Features",
+      },
+      {
+         href: "#pricing",
+         content: "Pricing"
+      },
+      {
+         href: "#resources",
+         content: "Resources",
+      }
+   ];
    return (
       <nav className="Navbar">
          <section className="Navbar__links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#resources">Resources</a>
+            {
+               links.map(
+                  ({ href, content }) => <Link key={href} href={href} content={content} />
+               )
+            }
          </section>
          <hr className="Navbar__break-line" />
          <section className="Navbar__buttons">
