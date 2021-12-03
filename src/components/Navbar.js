@@ -36,8 +36,8 @@ export const Navbar = () => {
             </section>
             <hr className="Navbar__break-line" />
             <section className="Navbar__buttons">
-               <Button type="secondary" content="Log in" />
-               <Button type="primary" content="Sign up" />
+               <Button type="ghost" content="Log in" />
+               <Button type="rounded--small" content="Sign up" />
             </section>
          </section>
       </nav>
