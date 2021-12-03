@@ -3,6 +3,7 @@
 import { Features } from "./Features";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
+import { Pricing } from "./Pricing";
 import { ShortenedLinks } from "./ShortenedLinks";
 import { Shortener } from "./Shortener";
 //assets
@@ -15,6 +16,7 @@ export const App = () => {
       <Shortener />
       <ShortenedLinks />
       <Features />
+      <Pricing />
     </div>
   );
 };

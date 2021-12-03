@@ -25,7 +25,7 @@ export const Features = () => {
       }
    ];
    return (
-      <>
+      <section className="Features" id="features">
          <h2 className="Features__title">Advanced Statistics</h2>
          <p className="Features__description"></p>
          {
@@ -33,6 +33,6 @@ export const Features = () => {
                ({ image, title, content }) => <FeatureCard key={title} image={image} title={title} content={content} />
             )
          }
-      </>
+      </section>
    );
 };
