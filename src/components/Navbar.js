@@ -30,7 +30,7 @@ export const Navbar = () => {
             <section className="Navbar__links">
                {
                   links.map(
-                     ({ href, content }) => <Link key={href} href={href} content={content} />
+                     ({ href, content }) => <Link type="navlink" key={href} href={href} content={content} />
                   )
                }
             </section>
