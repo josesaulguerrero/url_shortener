@@ -1,0 +1,19 @@
+.Link {
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+}
+
+.navlink {
+	margin-bottom: 20px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: #fffcff;
+}
+
+.footerLink {
+	margin-bottom: 20px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: var(--Grayish_Violet);
+}

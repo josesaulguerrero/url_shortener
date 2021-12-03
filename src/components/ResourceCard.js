@@ -11,7 +11,7 @@ export const ResourceCard = ({ title, links }) => {
             links.map(
                ({ content }) =>
                   <Link
-                     type="footer-link"
+                     type="footerLink"
                      href="#"
                      key={content}
                      content={content}
