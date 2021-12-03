@@ -21,17 +21,24 @@ export const Navbar = () => {
    ];
    return (
       <nav className="Navbar">
-         <section className="Navbar__links">
-            {
-               links.map(
-                  ({ href, content }) => <Link key={href} href={href} content={content} />
-               )
-            }
+         <section className="Navbar__icon">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
          </section>
-         <hr className="Navbar__break-line" />
-         <section className="Navbar__buttons">
-            <Button type="secondary" content="Log in" />
-            <Button type="primary" content="Sign up" />
+         <section className="Navbar__menu">
+            <section className="Navbar__links">
+               {
+                  links.map(
+                     ({ href, content }) => <Link key={href} href={href} content={content} />
+                  )
+               }
+            </section>
+            <hr className="Navbar__break-line" />
+            <section className="Navbar__buttons">
+               <Button type="secondary" content="Log in" />
+               <Button type="primary" content="Sign up" />
+            </section>
          </section>
       </nav>
    );
