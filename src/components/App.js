@@ -1,5 +1,6 @@
 //libraries and hooks
 //components
+import { Features } from "./Features";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { ShortenedLinks } from "./ShortenedLinks";
@@ -13,6 +14,7 @@ export const App = () => {
       <Hero />
       <Shortener />
       <ShortenedLinks />
+      <Features />
     </div>
   );
 };
