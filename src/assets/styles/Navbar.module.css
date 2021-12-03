@@ -43,11 +43,12 @@
 /* burger menu styles */
 .NavbarMenu {
 	width: 80%;
+	max-width: 300px;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 	position: absolute;
 	top: 80px;
 	left: 0;
@@ -90,4 +91,34 @@
 
 .NavbarButtons button {
 	margin-top: 20px;
+}
+
+/* media queries styles */
+@media screen and (min-width: 800px) {
+	.Navbar {
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.NavbarIcon {
+		display: none;
+	}
+
+	.NavbarBreakLine {
+		display: none;
+	}
+
+	.NavbarMenu {
+		width: 100%;
+		max-width: none;
+		position: static;
+		flex-direction: row;
+		background-color: unset;
+	}
+
+	.NavbarLinks,
+	.NavbarButtons {
+		flex-direction: row;
+	}
 }

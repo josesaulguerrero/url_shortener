@@ -4,16 +4,23 @@
 	text-align: center;
 }
 
-.navlink {
+.Link[type='navlink'] {
 	margin-bottom: 20px;
 	font-size: 1.6rem;
 	font-weight: bold;
 	color: #fffcff;
 }
 
-.footerLink {
+.Link[type='footerLink'] {
 	margin-bottom: 20px;
 	font-size: 1.6rem;
 	font-weight: bold;
 	color: var(--Grayish_Violet);
+}
+
+/* media queries styles */
+@media screen and (min-width: 800px) {
+	.Link.navlink {
+		color: var(--Grayish_Violet);
+	}
 }

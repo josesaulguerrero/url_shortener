@@ -8,7 +8,7 @@ import styles from "../assets/styles/Header.module.css";
 export const Header = () => {
    return (
       <header className={styles.Header}>
-         <section className="Header__logo">
+         <section className={styles.HeaderLogo}>
             <Logo color="#000" />
          </section>
          <Navbar />
