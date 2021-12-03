@@ -1,5 +1,6 @@
 //libraries and hooks
 //components
+import { Button } from "./Button";
 //assets
 
 export const Navbar = () => {
@@ -12,8 +13,8 @@ export const Navbar = () => {
          </section>
          <hr className="Navbar__break-line" />
          <section className="Navbar__buttons">
-            <button>Log in</button>
-            <button>Sign up</button>
+            <Button type="secondary" content="Log in" />
+            <Button type="primary" content="Sign up" />
          </section>
       </nav>
    );
