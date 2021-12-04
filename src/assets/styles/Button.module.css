@@ -1,0 +1,51 @@
+.Button {
+	outline: none;
+	border: none;
+	font-family: inherit;
+	font-weight: bold;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+.Button[type*='rounded'] {
+	/* all the buttons that have a "type" property which starts by "rounded" will take these styles */
+	color: var(--white);
+	background-color: var(--Cyan);
+	border-radius: 25px;
+}
+
+.Button[type='rounded--small'] {
+	width: 100%;
+	padding: 10px;
+}
+
+.Button[type='rounded--large'] {
+	width: 200px;
+	height: 50px;
+}
+
+.Button[type='ghost'] {
+	background-color: transparent;
+	width: 100%;
+	padding: 10px;
+	color: var(--white);
+}
+
+/* media query styles */
+@media screen and (min-width: 800px) {
+	.Button[type='ghost'],
+	.Button[type='rounded--small'] {
+		width: 120px;
+	}
+
+	.Button[type='ghost'] {
+		color: var(--Grayish_Violet);
+	}
+}
+
+@media (hover: hover) {
+	/* if the device has a cursor, then the following styles should be added. */
+	.Button:hover {
+		transform: scale(0.9);
+	}
+}

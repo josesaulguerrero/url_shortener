@@ -15,6 +15,7 @@
 	/* secondary */
 	--Red: hsl(0, 87%, 67%);
 	/* Neutral */
+	--white: #fffcff;
 	--Gray: hsl(0, 0%, 75%);
 	--Dark_Blue: hsl(255, 11%, 22%);
 	--Grayish_Violet: hsl(257, 7%, 63%);
