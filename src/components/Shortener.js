@@ -18,19 +18,17 @@ export const Shortener = () => {
       message: undefined
    });
 
+   const onInvalidInput = () => {
+      setErrorStatus({
+         error: true,
+         message: "Please enter a valid URL"
+      });
+   };
+
    const onSubmit = (event) => {
       // when the form is submitted:
       event.preventDefault();
       const { value } = reference.current;
-      const regex = /^((http|https):\/\/)?\w{3,150}\.\w{2,}$/;
-      if (!regex.test(value.trim())) {
-         // if the input value doesn't match the set regex, then the errorStatus is set to true.
-         setErrorStatus({
-            error: true,
-            message: "Please enter a valid URL"
-         });
-         return;
-      }
       axios.get(`${process.env.REACT_APP_API_URL}${value}`)
          .then((response) => {
             const { original_link, short_link } = response.data.result;
@@ -57,9 +55,10 @@ export const Shortener = () => {
          <form className={styles.ShortenerForm} onSubmit={onSubmit}>
             <input
                ref={reference}
-               type="text"
+               type="url"
                placeholder="Shorten a link here..."
                className={styles.FormInput}
+               onInvalid={onInvalidInput}
             />
             <Button
                type="squared--large"
