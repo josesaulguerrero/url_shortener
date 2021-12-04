@@ -8,17 +8,21 @@ import { Pricing } from "./Pricing";
 import { ShortenedLinks } from "./ShortenedLinks";
 import { Shortener } from "./Shortener";
 //assets
+//context
+import { LinksContextProvider } from "../context/LinksContext";
 
 export const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Shortener />
-      <ShortenedLinks />
-      <Features />
-      <Pricing />
-      <Footer />
+      <LinksContextProvider>
+        <Header />
+        <Hero />
+        <Shortener />
+        <ShortenedLinks />
+        <Features />
+        <Pricing />
+        <Footer />
+      </LinksContextProvider>
     </div>
   );
 };

@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 
-export const UseLocalStorage = () => {
+export const LinksContext = createContext([]);
+
+export const LinksContextProvider = ({ children }) => {
    const initialState = window.localStorage.getItem("shortened_links")
       ? JSON.parse(window.localStorage.getItem("shortened_links"))
       : [];
@@ -16,5 +18,10 @@ export const UseLocalStorage = () => {
       window.localStorage.setItem("shortened_links", JSON.stringify(newState));
       //and finally the LocalStorage state is updated.
    };
-   return [data, addItem];
+
+   return (
+      <LinksContext.Provider value={{ data, addItem }}>
+         {children}
+      </LinksContext.Provider>
+   );
 };

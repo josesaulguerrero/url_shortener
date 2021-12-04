@@ -1,13 +1,15 @@
 //libraries and hooks
 import axios from "axios";
 import { useRef } from "react";
-import { UseLocalStorage } from "../hooks/useLocalStorage";
+import { useContext } from "react";
 //components
 import { Button } from "./Button";
 //assets
+// context
+import { LinksContext } from "../context/LinksContext";
 
 export const Shortener = () => {
-   const [, addItem] = UseLocalStorage();
+   const { addItem } = useContext(LinksContext);
    const reference = useRef();
    const onSubmit = async (event) => {
       event.preventDefault();
