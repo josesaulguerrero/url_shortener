@@ -9,6 +9,7 @@
 	font-size: 1.6rem;
 	font-weight: bold;
 	color: #fffcff;
+	transition: transform 0.1s ease-in-out;
 }
 
 .Link[type='footerLink'] {
@@ -20,7 +21,19 @@
 
 /* media queries styles */
 @media screen and (min-width: 800px) {
-	.Link.navlink {
+	.Link[type='navlink'] {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
 		color: var(--Grayish_Violet);
+	}
+}
+
+@media (hover: hover) {
+	/* if the device has a cursor, then the following styles should be added. */
+	.Link[type='navlink']:hover {
+		transform: translateY(5px);
 	}
 }

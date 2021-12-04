@@ -97,10 +97,12 @@
 @media screen and (min-width: 800px) {
 	.Navbar {
 		width: 100%;
+		height: 100%;
 		justify-content: space-between;
 		align-items: center;
 	}
 
+	/* this helps hide the burger menu */
 	.NavbarIcon {
 		display: none;
 	}
@@ -108,17 +110,34 @@
 	.NavbarBreakLine {
 		display: none;
 	}
+	/* ------------------------------- */
 
 	.NavbarMenu {
 		width: 100%;
+		height: 100%;
 		max-width: none;
 		position: static;
 		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 10px;
+		visibility: visible;
+		opacity: 1;
 		background-color: unset;
 	}
 
 	.NavbarLinks,
 	.NavbarButtons {
+		max-width: 350px;
+		height: 100%;
 		flex-direction: row;
+	}
+
+	.NavbarButtons {
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.NavbarButtons button {
+		margin: 0;
 	}
 }

@@ -13,3 +13,16 @@
 	align-items: center;
 	justify-content: center;
 }
+
+/* media query styles */
+@media screen and (min-width: 800px) {
+	.Header {
+		padding: 0 50px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.Header {
+		padding: 0 100px;
+	}
+}
