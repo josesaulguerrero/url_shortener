@@ -8,6 +8,7 @@ import FacebookLogo from "../assets/images/icon-facebook.svg";
 import TwitterLogo from "../assets/images/icon-twitter.svg";
 import PinterestLogo from "../assets/images/icon-pinterest.svg";
 import InstagramLogo from "../assets/images/icon-instagram.svg";
+import styles from "../assets/styles/Footer.module.css";
 
 export const Footer = () => {
    const resources = [
@@ -76,27 +77,32 @@ export const Footer = () => {
       },
    ];
    return (
-      <footer className="Footer" id="resources">
+      <footer className={styles.Footer} id="resources">
          <Logo color="#fff" />
-         {
-            resources.map(({ title, links }) =>
-               <ResourceCard
-                  key={title}
-                  title={title}
-                  links={links}
-               />
-            )
-         }
-         {
-            socialMedia.map(({ name, image }) =>
-               <SocialMediaIcon
-                  href="#"
-                  key={name}
-                  name={name}
-                  image={image}
-               />
-            )
-         }
+         <section className={styles.Resources}>
+            {
+               resources.map(({ title, links }) =>
+                  <ResourceCard
+                     key={title}
+                     title={title}
+                     links={links}
+                  />
+               )
+            }
+         </section>
+         <section className={styles.SocialMedia}>
+            {
+               socialMedia.map(({ name, image }) =>
+                  <SocialMediaIcon
+                     href="#"
+                     key={name}
+                     name={name}
+                     image={image}
+                  />
+               )
+            }
+         </section>
+         <span className={styles.Challenge}>Challenge by Frontend Mentor</span>
       </footer>
    );
 };

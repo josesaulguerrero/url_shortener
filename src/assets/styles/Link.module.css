@@ -13,7 +13,7 @@
 }
 
 .Link[type='footerLink'] {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-size: 1.6rem;
 	font-weight: bold;
 	color: var(--Grayish_Violet);
