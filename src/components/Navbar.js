@@ -44,6 +44,7 @@ export const Navbar = () => {
                ${styles.NavbarMenu}
                ${isOpen ? styles.NavbarMenu__IsOpen : styles.NavbarMenu__IsClosed}
             `}
+            onClick={onMenuClick}
          >
             <section className={styles.NavbarLinks}>
                {
