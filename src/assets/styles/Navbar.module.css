@@ -57,6 +57,8 @@
 	padding: 20px;
 	background-color: var(--Dark_Violet);
 	border-radius: 10px;
+	z-index: 1;
+	will-change: visibility, transform;
 	transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
