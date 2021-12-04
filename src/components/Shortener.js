@@ -5,6 +5,7 @@ import { useContext } from "react";
 //components
 import { Button } from "./Button";
 //assets
+import styles from "../assets/styles/Shortener.module.css";
 // context
 import { LinksContext } from "../context/LinksContext";
 import { ErrorText } from "./ErrorText";
@@ -12,6 +13,7 @@ import { ErrorText } from "./ErrorText";
 export const Shortener = () => {
    const { addItem } = useContext(LinksContext);
    const reference = useRef(); // the form state is handled with useRef, so that it doesn't re-renders every time the inputs' value change.
+   const { value } = reference.current;
    const [errorStatus, setErrorStatus] = useState({
       error: false,
       message: undefined
@@ -20,7 +22,6 @@ export const Shortener = () => {
    const onSubmit = (event) => {
       // when the form is submitted:
       event.preventDefault();
-      const { value } = reference.current;
       const regex = /^((http|https):\/\/)?\w{3,150}\.\w{2,}$/;
       if (!regex.test(value.trim())) {
          // if the input value doesn't match the set regex, then the errorStatus is set to true.
@@ -28,6 +29,7 @@ export const Shortener = () => {
             error: true,
             message: "Please enter a valid URL"
          });
+         reference.current.setCustomValidity("Invalid field.");
          return;
       }
       axios.get(`${process.env.REACT_APP_API_URL}${value}`)
@@ -52,14 +54,19 @@ export const Shortener = () => {
    };
 
    return (
-      <section className="Shortener">
-         <form className="Shortener__form" onSubmit={onSubmit}>
+      <section className={styles.Shortener}>
+         <form className={styles.ShortenerForm} onSubmit={onSubmit}>
             <input
                ref={reference}
                type="text"
                placeholder="Shorten a link here..."
+               className={styles.FormInput}
             />
-            <Button type="primary--squared" content="Shorten it!" />
+            <Button
+               type="squared--large"
+               content="Shorten it!"
+               disabled={!value.trim() && true}
+            />
          </form>
          {
             errorStatus.error && <ErrorText content={errorStatus.message} />

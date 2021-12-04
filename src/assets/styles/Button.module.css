@@ -24,6 +24,12 @@
 	height: 50px;
 }
 
+.Button[type='squared--large'] {
+	color: var(--white);
+	background-color: var(--Cyan);
+	border-radius: 5px;
+}
+
 .Button[type='ghost'] {
 	background-color: transparent;
 	width: 100%;
