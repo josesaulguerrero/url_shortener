@@ -1,0 +1,50 @@
+.LinkCard {
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template: repeat(3, 1fr) / 100%;
+	grid-template-areas:
+		'originalLink'
+		'shortenedLink'
+		'copyButton';
+	gap: 5px 30px;
+	margin: 20px 0;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.originalLink,
+.shortenedLink {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.originalLink {
+	grid-area: originalLink;
+	border-bottom: 1px solid var(--Gray);
+	color: var(--Dark_Violet);
+}
+
+.shortenedLink {
+	grid-area: shortenedLink;
+	color: var(--Cyan);
+}
+
+/* media query styles */
+@media screen and (min-width: 800px) {
+	.LinkCard {
+		grid-template: 100% / 5fr 4fr 1fr;
+		grid-template-areas: 'originalLink shortenedLink copyButton';
+	}
+
+	.originalLink {
+		border: none;
+	}
+
+	.shortenedLink {
+		justify-content: flex-end;
+	}
+}
