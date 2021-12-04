@@ -45,11 +45,21 @@
 
 /* media query styles */
 @media screen and (min-width: 800px) {
+	.Shortener {
+		padding: 0 50px;
+	}
+
 	.ShortenerForm {
 		justify-content: space-between;
-		grid-template: 100% / 8.5fr 1.5fr;
+		grid-template: 100% / 8fr 2fr;
 		grid-template-areas: 'input button';
 		gap: 20px;
 		padding: 40px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.Shortener {
+		padding: 0 100px;
 	}
 }

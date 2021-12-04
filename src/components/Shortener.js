@@ -13,7 +13,6 @@ import { ErrorText } from "./ErrorText";
 export const Shortener = () => {
    const { addItem } = useContext(LinksContext);
    const reference = useRef(); // the form state is handled with useRef, so that it doesn't re-renders every time the inputs' value change.
-   const { value } = reference.current;
    const [errorStatus, setErrorStatus] = useState({
       error: false,
       message: undefined
@@ -22,6 +21,7 @@ export const Shortener = () => {
    const onSubmit = (event) => {
       // when the form is submitted:
       event.preventDefault();
+      const { value } = reference.current;
       const regex = /^((http|https):\/\/)?\w{3,150}\.\w{2,}$/;
       if (!regex.test(value.trim())) {
          // if the input value doesn't match the set regex, then the errorStatus is set to true.
@@ -29,7 +29,6 @@ export const Shortener = () => {
             error: true,
             message: "Please enter a valid URL"
          });
-         reference.current.setCustomValidity("Invalid field.");
          return;
       }
       axios.get(`${process.env.REACT_APP_API_URL}${value}`)
@@ -65,7 +64,6 @@ export const Shortener = () => {
             <Button
                type="squared--large"
                content="Shorten it!"
-               disabled={!value.trim() && true}
             />
          </form>
          {

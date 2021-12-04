@@ -5,10 +5,11 @@ import styles from "../assets/styles/Button.module.css";
 
 export const Button = ({
    type = "primary",
-   content = "write something"
+   content = "write something",
+   disabled = false
 }) => {
    return (
-      <button className={styles.Button} type={type} >
+      <button disabled={disabled} className={styles.Button} type={type} >
          {content}
       </button>
    );
