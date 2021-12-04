@@ -1,14 +1,19 @@
 //libraries and hooks
 //assets
+import styles from "../assets/styles/LinkCard.module.css";
 //components
-import { CopyToClipboard } from "./copyToClipboard";
+import { Button } from "./Button";
 
-export const LinkCard = ({ originalLink, ShortenedLink }) => {
+export const LinkCard = ({ originalLink, shortenedLink }) => {
+   const copyLinkToClipboard = (link) => {
+      console.log(link, shortenedLink);
+      navigator.clipboard.writeText(String(link));
+   };
    return (
-      <article className="LinkCard">
-         <p className="LinkCard__original-link">{originalLink}</p>
-         <p className="LinkCard__shortened-link">{ShortenedLink}</p>
-         <CopyToClipboard shortenedLink={ShortenedLink} />
+      <article className={styles.LinkCard}>
+         <p className={styles.originalLink}>{originalLink}</p>
+         <p className={styles.shortenedLink}>{shortenedLink}</p>
+         <Button type="square--small" content="copy!" onClick={() => copyLinkToClipboard(shortenedLink)} />
       </article>
    );
 };

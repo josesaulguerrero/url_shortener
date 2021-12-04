@@ -14,7 +14,7 @@ export const ShortenedLinks = () => {
             <LinkCard
                key={index}
                originalLink={original_link}
-               ShortenedLink={short_link}
+               shortenedLink={short_link}
             />
          )}
       </section>
