@@ -5,6 +5,7 @@ import { FeatureCard } from "./FeatureCard";
 import brandRecognitionIllustration from "../assets/images/icon-brand-recognition.svg";
 import detailedRecordsIllustration from "../assets/images/icon-detailed-records.svg";
 import fullyCustomizableIllustration from "../assets/images/icon-fully-customizable.svg";
+import styles from "../assets/styles/Features.module.css";
 
 export const Features = () => {
    const CardsInfo = [
@@ -25,14 +26,16 @@ export const Features = () => {
       }
    ];
    return (
-      <section className="Features" id="features">
-         <h2 className="Features__title">Advanced Statistics</h2>
-         <p className="Features__description"></p>
-         {
-            CardsInfo.map(
-               ({ image, title, content }) => <FeatureCard key={title} image={image} title={title} content={content} />
-            )
-         }
+      <section className={styles.Features} id="features">
+         <h2 className={styles.FeaturesTitle}>Advanced Statistics</h2>
+         <p className={styles.FeaturesDescription}>Track how your links are performing across the web with our advanced statistics dashboard.</p>
+         <section className={styles.Cards}>
+            {
+               CardsInfo.map(
+                  ({ image, title, content }) => <FeatureCard key={title} image={image} title={title} content={content} />
+               )
+            }
+         </section>
       </section>
    );
 };

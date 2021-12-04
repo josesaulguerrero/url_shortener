@@ -12,6 +12,8 @@
 	padding: 15px;
 	background-color: var(--white);
 	border-radius: 10px;
+	opacity: 0;
+	animation: fadeIn 0.2s ease-in-out forwards;
 }
 
 .originalLink,
@@ -32,6 +34,13 @@
 .shortenedLink {
 	grid-area: shortenedLink;
 	color: var(--Cyan);
+}
+
+/* animations */
+@keyframes fadeIn {
+	100% {
+		opacity: 1;
+	}
 }
 
 /* media query styles */
