@@ -55,8 +55,8 @@ export const Navbar = () => {
             </section>
             <hr className={styles.NavbarBreakLine} />
             <section className={styles.NavbarButtons}>
-               <Button type="ghost" content="Log in" />
-               <Button type="rounded--small" content="Sign up" />
+               <Button type="ghost" >Log in</Button>
+               <Button type="rounded--small" >Sign up</Button>
             </section>
          </section>
       </nav>

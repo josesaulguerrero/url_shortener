@@ -8,7 +8,7 @@ export const Pricing = () => {
    return (
       <section className={styles.Pricing} id="pricing" >
          <h2 className={styles.PricingTitle} >Boost your links today</h2>
-         <Button type="rounded--large" content="Get Started" />
+         <Button type="rounded--large">Get Started</Button>
       </section>
    );
 };

@@ -14,7 +14,7 @@ export const Hero = () => {
          <section className={styles.HeroContent}>
             <h1 className={styles.HeroTitle}>More than just shorter links</h1>
             <p className={styles.HeroDescription}>Build your brand's recognition and get detailed insights on how your links are performing.</p>
-            <Button type="rounded--large" content="Get started" />
+            <Button type="rounded--large" >Get Started</Button>
          </section>
       </main>
    );

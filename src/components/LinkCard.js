@@ -13,7 +13,10 @@ export const LinkCard = ({ originalLink, shortenedLink }) => {
       <article className={styles.LinkCard}>
          <p className={styles.originalLink}>{originalLink}</p>
          <p className={styles.shortenedLink}>{shortenedLink}</p>
-         <Button type="squared--small" content="Copy" onClick={() => copyLinkToClipboard(shortenedLink)} />
+         <Button
+            type="squared--small"
+            onClick={() => copyLinkToClipboard(shortenedLink)}
+         >Copy</Button>
       </article>
    );
 };

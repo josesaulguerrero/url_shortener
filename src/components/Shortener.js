@@ -62,8 +62,7 @@ export const Shortener = () => {
             />
             <Button
                type="squared--large"
-               content="Shorten it!"
-            />
+            >Shorten it!</Button>
          </form>
          {
             errorStatus.error && <ErrorText content={errorStatus.message} />
