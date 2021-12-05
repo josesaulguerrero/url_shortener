@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Shortly URL - shortening API Challenge solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+-   [Overview](#overview)
 
-### `yarn start`
+-   [The challenge](#the-challenge)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   [Screenshot](#screenshot)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-   [Links](#links)
 
-### `yarn test`
+-   [My process](#my-process)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   [Built with](#built-with)
 
-### `yarn build`
+-   [What I learned](#what-i-learned)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   [Continued development](#continued-development)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   [Author](#author)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Overview
 
-### `yarn eject`
+### The challenge
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Users should be able to:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   View the optimal layout for the site depending on their device's screen size
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   Shorten any valid URL
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   See a list of their shortened links, even after refreshing the browser
 
-## Learn More
+-   Copy the shortened link to their clipboard in a single click
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   Receive an error message when the `form` is submitted if:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   The `input` field is empty
 
-### Code Splitting
+### Screenshot
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![screenshoot](https://i.postimg.cc/pVQrTFm6/urlshortenerchallenge-netlify-app.png)
 
-### Analyzing the Bundle Size
+### Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-   [Solution URL](https://github.com/josesaulguerrero/url_shortener)
 
-### Making a Progressive Web App
+-   [Live site URL ](https://urlshortenerchallenge.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## My process
 
-### Advanced Configuration
+### Built with
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-   Semantic HTML5 markup
 
-### Deployment
+-   CSS custom properties
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-   Flexbox
 
-### `yarn build` fails to minify
+-   CSS Grid
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Mobile-first workflow
+
+-   [React](https://reactjs.org/) - JS library
+
+-   [Axios](https://axios-http.com/docs/intro) - JS library
+
+-   CSS modules for React
+
+### What I learned
+
+Building this project helped me learn to use and improve my knowledge of some React and JS tools, such as:
+
+-   CSS modules.
+-   React Context.
+-   Axios.
+-   Local Storage.
+-   The clipboard object.
+
+### Continued development
+
+I would like to keep improving my abilities in the creation of re-usable components, like buttons and links.
+I would also like to learn more about React hooks, such as useRef, useState and useContext, to handle my components' state.
+
+## Author
+
+-   Website - [Jose Saúl Guerrero Serrano](https://joseguerreroserrano.netlify.app/)
+
+-   Github - [@josesaulguerrero](https://github.com/josesaulguerrero)
