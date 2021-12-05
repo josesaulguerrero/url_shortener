@@ -9,25 +9,33 @@ import styles from "../assets/styles/Shortener.module.css";
 // context
 import { LinksContext } from "../context/LinksContext";
 import { ErrorText } from "./ErrorText";
+import { Loader } from "./Loader";
 
 export const Shortener = () => {
    const { addItem } = useContext(LinksContext);
-   const reference = useRef(); // the form state is handled with useRef, so that it doesn't re-renders every time the inputs' value change.
-   const [errorStatus, setErrorStatus] = useState({
-      error: false,
-      message: undefined
+   const reference = useRef(); // the input state is handled with useRef, so that it doesn't re-renders every time the inputs' value change.
+   const [componentStatus, setComponentStatus] = useState({
+      initial: true,
+      loading: false,
+      error: ""
    });
 
    const onInvalidInput = () => {
-      setErrorStatus({
-         error: true,
-         message: "Please enter a valid URL"
+      setComponentStatus({
+         loading: false,
+         initial: true,
+         error: "Please enter a valid URL"
       });
    };
 
    const onSubmit = (event) => {
       // when the form is submitted:
       event.preventDefault();
+      setComponentStatus({
+         loading: true,
+         initial: false,
+         error: ""
+      });
       const { value } = reference.current;
       axios.get(`${process.env.REACT_APP_API_URL}${value}`)
          .then((response) => {
@@ -36,19 +44,24 @@ export const Shortener = () => {
                original_link,
                short_link
             });
-            // if everything goes okay, then the errorStatus is set to false.
-            setErrorStatus({
-               error: false
+            // if everything goes okay, then the Loader goes away and the component comes back to its initial state.
+            setComponentStatus({
+               loading: false,
+               initial: true,
+               error: ""
             });
          })
          .catch(() => {
-            // if the API responds with an error, then the errorStatus is set to true and the user is asked to try again later.
-            setErrorStatus({
-               error: true,
-               message: "something went wrong, please try again later."
+            // if the API responds with an error, then the error state is given a message.
+            setComponentStatus({
+               loading: false,
+               initial: false,
+               error: "something went wrong, please try again later."
             });
          });
    };
+
+   const { initial, loading, error } = componentStatus;
 
    return (
       <section className={styles.Shortener}>
@@ -62,10 +75,18 @@ export const Shortener = () => {
             />
             <Button
                type="squared--large"
-            >Shorten it!</Button>
+               disabled={loading}
+            >
+               {
+                  (initial || error.trim()) && "Shorten it!"
+               }
+               {
+                  loading && <Loader />
+               }
+            </Button>
          </form>
          {
-            errorStatus.error && <ErrorText content={errorStatus.message} />
+            error.trim() && <ErrorText content={componentStatus.error} />
          }
       </section>
    );
