@@ -20,6 +20,8 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 -   [Continued development](#continued-development)
 
+-   [Useful resources](#useful-resources)
+
 -   [Author](#author)
 
 ## Overview
@@ -82,8 +84,25 @@ Building this project helped me learn to use and improve my knowledge of some Re
 
 ### Continued development
 
-I would like to keep improving my abilities in the creation of re-usable components, like buttons and links.
-I would also like to learn more about React hooks, such as useRef, useState and useContext, to handle my components' state.
+-   I tried to follow a modular approach while writing my CSS stylesheets, which helped me avoid common problems, such as selector collisions or affecting other selector's styles by mistake.
+
+-   I used useState React hook in order to handle the possible errors that could happen while requesting information from the API.
+
+-   To connect to the given API and fetch the information I used AXIOS, a JS library that works with promises.
+
+-   Implemented the `@media (hover: hover) {}` CSS media query, which is used to detect if the user's device has a cursor, to add hover transitions.
+
+-   Instead of using useState to handle my inputs state, I used useRef because it won't re-render the whole component every time that the input's value change.
+
+-   I added some smooth animations to the elements that the user can interact with.
+
+-   There were some components that could be re-used, so I tried to write styles that would work no matter where the component is used.
+
+### Useful resources
+
+-   [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) - This helped me understand the basic usage of CSS modules and how to integrate them into a React project.
+-   [Why are CSS modules useful?](https://www.gatsbyjs.com/docs/how-to/styling/css-modules/) - This article helped me understand the benefits of working with modular CSS stylesheets, such as component-scoped styles, which means no selector collisions.
+-   [Axios](https://axios-http.com/docs) - This is the documentation of Axios, a promise-based JS library that helped me request information from an API.
 
 ## Author
 
